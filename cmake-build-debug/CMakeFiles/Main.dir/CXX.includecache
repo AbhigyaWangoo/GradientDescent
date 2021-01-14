@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/abhiwangoo/Desktop/GradientDescent/include/gradient.h
+iostream
+-
+vector
+/Users/abhiwangoo/Desktop/GradientDescent/include/vector
+
+/Users/abhiwangoo/Desktop/GradientDescent/src/gradient.cpp
+../include/gradient.h
+/Users/abhiwangoo/Desktop/GradientDescent/include/gradient.h
+
