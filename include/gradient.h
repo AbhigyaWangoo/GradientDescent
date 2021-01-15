@@ -16,8 +16,12 @@ namespace gradientDescent {
 
     private:
         double percision_ = 0.000001;
-        double learning_rate_ = 0.001;
+        double learning_rate_ = 0.01;
+        double parameter_m = 1;
+        double parameter_b = 0;
 
-        double CostFunctionDerivative(double parameter_m, std::vector<double> &y_values, std::vector<double> &x_values, double m);
+        double CostFunctionDerivative(std::vector<double> &x_values, std::vector<double> &y_values, double m, bool is_const);
+
+        double Hypothesis(double input);
     };
 }
