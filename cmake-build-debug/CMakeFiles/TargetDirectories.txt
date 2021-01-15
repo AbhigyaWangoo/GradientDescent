@@ -1,3 +1,0 @@
-/Users/abhiwangoo/Desktop/GradientDescent/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/abhiwangoo/Desktop/GradientDescent/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/abhiwangoo/Desktop/GradientDescent/cmake-build-debug/CMakeFiles/Main.dir
