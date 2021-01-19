@@ -19,6 +19,7 @@ int main() {
         x2.push_back(i / 2);
         y.push_back(i); // Change me to change y values
     }
+
     x_in.push_back(x);
     x_in.push_back(x2);
 
@@ -123,4 +124,45 @@ double gradientDescent::Gradient::CalculateHypothesisOutput(double input, bool i
 
 const std::vector<double> &gradientDescent::Gradient::getParameters() const {
     return parameters_;
+}
+
+void gradientDescent::Gradient::ScaleParameters(std::vector<double> &x_values) {
+    double range = FindMax(x_values) - FindMin(x_values);
+    double average = FindAverage(x_values);
+
+    for (size_t i = 0 ; i < x_values.size() ; i ++) {
+        x_values[i] = (x_values[i] - average) / range;
+    }
+}
+
+double gradientDescent::Gradient::FindMax(std::vector<double> &values) {
+    double min = values[0];
+
+    for (size_t i = 1 ; i < values.size() ; i ++) {
+            if (min > values[i])
+                min = values[i];
+    }
+
+    return min;
+}
+
+double gradientDescent::Gradient::FindMin(std::vector<double> &values) {
+    double max = values[0];
+
+    for (size_t i = 1 ; i < values.size() ; i ++) {
+        if (max < values[i])
+            max = values[i];
+    }
+
+    return max;
+}
+
+double gradientDescent::Gradient::FindAverage(std::vector<double> &values) {
+    double total = 0;
+
+    for (size_t i = 0 ; i < values.size() ; i ++) {
+        total += values[i];
+    }
+
+    return total / values.size();
 }

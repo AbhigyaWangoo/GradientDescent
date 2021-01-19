@@ -65,6 +65,13 @@ namespace gradientDescent {
          */
         double CalculateHypothesisOutput(double input, bool is_multivariate) const;
 
+        /**
+         * Function to implement feature scaling for datasets
+         *
+         * @param x_values to scale down to the appropriate values
+         */
+        void ScaleParameters(std::vector<double> &x_values);
+
         const double kPrecision = 0.0000000000000000001;
         const double kLearningRate = 0.01;
         double parameter_m_ = 1;
@@ -72,5 +79,23 @@ namespace gradientDescent {
 
         // Multivariate parameter values
         std::vector<double> parameters_;
+
+        /**
+         * Finds the minimum of a values
+         *
+         * @param values to find minimum of
+         * @return the minimum value
+         */
+        double FindMax(std::vector<double> &values);
+
+        /**
+         * Finds the maximum of a values
+         *
+         * @param values to find the maximum of
+         * @return the maximum value
+         */
+        double FindMin(std::vector<double> &values);
+
+        double FindAverage(std::vector<double> &values);
     };
 }
